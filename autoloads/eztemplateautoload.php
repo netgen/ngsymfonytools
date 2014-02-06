@@ -9,12 +9,7 @@ $eZTemplateOperatorArray[] = array(
 
 $eZTemplateOperatorArray[] = array(
     'class' => 'NgSymfonyToolsRenderOperator',
-    'operator_names' => array( 'symfony_render' )
-);
-
-$eZTemplateOperatorArray[] = array(
-    'class' => 'NgSymfonyToolsRenderStrategyOperator',
-    'operator_names' => array( 'symfony_render_esi', 'symfony_render_hinclude' )
+    'operator_names' => array( 'symfony_render', 'symfony_render_esi', 'symfony_render_hinclude' )
 );
 
 $eZTemplateOperatorArray[] = array(

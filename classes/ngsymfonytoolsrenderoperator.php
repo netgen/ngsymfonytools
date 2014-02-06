@@ -11,7 +11,7 @@ class NgSymfonyToolsRenderOperator
      */
     function operatorList()
     {
-        return array( 'symfony_render' );
+        return array( 'symfony_render', 'symfony_render_esi', 'symfony_render_hinclude' );
     }
 
     /**
@@ -33,6 +33,28 @@ class NgSymfonyToolsRenderOperator
     {
         return array(
             'symfony_render' => array(
+                'uri' => array(
+                    'type' => 'string',
+                    'required' => true
+                ),
+                'options' => array(
+                    'type' => 'array',
+                    'required' => false,
+                    'default' => array()
+                )
+            ),
+            'symfony_render_esi' => array(
+                'uri' => array(
+                    'type' => 'string',
+                    'required' => true
+                ),
+                'options' => array(
+                    'type' => 'array',
+                    'required' => false,
+                    'default' => array()
+                )
+            ),
+            'symfony_render_hinclude' => array(
                 'uri' => array(
                     'type' => 'string',
                     'required' => true
@@ -76,6 +98,15 @@ class NgSymfonyToolsRenderOperator
         }
 
         $options = $namedParameters['options'] !== null ? $namedParameters['options'] : array();
+
+        if ( $operatorName === 'symfony_render_esi' )
+        {
+            $options['strategy'] = 'esi';
+        }
+        else if ( $operatorName === 'symfony_render_hinclude' )
+        {
+            $options['strategy'] = 'hinclude';
+        }
 
         $operatorValue = self::renderUri( $uri, $options );
     }
