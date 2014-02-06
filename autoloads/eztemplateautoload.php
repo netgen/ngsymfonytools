@@ -18,11 +18,6 @@ $eZTemplateOperatorArray[] = array(
 );
 
 $eZTemplateOperatorArray[] = array(
-    'class' => 'NgSymfonyToolsPathOperator',
-    'operator_names' => array( 'symfony_path' )
-);
-
-$eZTemplateOperatorArray[] = array(
-    'class' => 'NgSymfonyToolsUrlOperator',
-    'operator_names' => array( 'symfony_url' )
+    'class' => 'NgSymfonyToolsPathUrlOperator',
+    'operator_names' => array( 'symfony_path', 'symfony_url' )
 );

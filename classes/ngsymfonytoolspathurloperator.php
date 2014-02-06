@@ -2,7 +2,7 @@
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class NgSymfonyToolsUrlOperator
+class NgSymfonyToolsPathUrlOperator
 {
     /**
      * Returns the list of template operators this class supports
@@ -11,7 +11,7 @@ class NgSymfonyToolsUrlOperator
      */
     function operatorList()
     {
-        return array( 'symfony_url' );
+        return array( 'symfony_path', 'symfony_url' );
     }
 
     /**
@@ -32,6 +32,22 @@ class NgSymfonyToolsUrlOperator
     function namedParameterList()
     {
         return array(
+            'symfony_path' => array(
+                'name' => array(
+                    'type' => 'string',
+                    'required' => true
+                ),
+                'parameters' => array(
+                    'type' => 'array',
+                    'required' => false,
+                    'default' => array()
+                ),
+                'relative' => array(
+                    'type' => 'boolean',
+                    'required' => false,
+                    'default' => false
+                )
+            ),
             'symfony_url' => array(
                 'name' => array(
                     'type' => 'string',
@@ -81,13 +97,36 @@ class NgSymfonyToolsUrlOperator
 
         $parameters = $namedParameters['parameters'] !== null ? $namedParameters['parameters'] : array();
 
-        $schemeRelative = false;
-        if ( isset( $namedParameters['scheme_relative'] ) && $namedParameters['scheme_relative'] === true )
+        if ( $operatorName === 'symfony_path' )
         {
-            $schemeRelative = true;
+            $relative = isset( $namedParameters['relative'] ) && $namedParameters['relative'] === true;
+            $operatorValue = self::getPath( $name, $parameters, $relative );
         }
+        else if ( $operatorName === 'symfony_url' )
+        {
+            $schemeRelative = isset( $namedParameters['scheme_relative'] ) && $namedParameters['scheme_relative'] === true;
+            $operatorValue = self::getUrl( $name, $parameters, $schemeRelative );
+        }
+    }
 
-        $operatorValue = self::getUrl( $name, $parameters, $schemeRelative );
+    /**
+     * Returns the path for provided route and parameters
+     *
+     * @param string $name
+     * @param array $parameters
+     * @param bool $relative
+     *
+     * @return string
+     */
+    public static function getPath( $name, $parameters = array(), $relative = false )
+    {
+        $serviceContainer = ezpKernel::instance()->getServiceContainer();
+
+        return $serviceContainer->get('router')->generate(
+            $name,
+            $parameters,
+            $relative ? UrlGeneratorInterface::RELATIVE_PATH : UrlGeneratorInterface::ABSOLUTE_PATH
+        );
     }
 
     /**
