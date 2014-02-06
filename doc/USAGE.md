@@ -85,10 +85,6 @@ Example calls:
         hash(
             'theAnswer', 42,
             'homepage', fetch( content, node, hash( node_id, 2 ) )
-        ),
-        hash(
-            'queryParam1', 'netgen',
-            'queryParam2', 'symfony'
         )
     )
 )}
@@ -108,6 +104,38 @@ Example calls:
     symfony_url(
         'netgen_test_route',
         hash( 'theAnswer', 42 )
+    )
+)}
+```
+
+### `symfony_render_esi` and `symfony_render_hinclude`
+
+`symfony_render_esi` and `symfony_render_hinclude` template operators generate an ESI tag or Hinclude tag, respectivelly, for the given controller or URL. Parameters are the same as with Twig `render_esi` and `render_hinclude` template functions so please refer to [this page][1] for documentation.
+
+`symfony_render_esi` template operator can be used instead of `symfony_render` operator, because underlying `render_esi` Twig template function falls back to `render` behavior if reverse proxy is not detected by Symfony.
+
+Example calls:
+
+```smarty
+{symfony_render_esi(
+    symfony_controller(
+        'NetgenTestBundle:Test:test.html.twig',
+        hash(
+            'theAnswer', 42,
+            'homepage', fetch( content, node, hash( node_id, 2 ) )
+        )
+    )
+)}
+```
+
+```smarty
+{symfony_render_hinclude(
+    symfony_controller(
+        'NetgenTestBundle:Test:test.html.twig',
+        hash(
+            'theAnswer', 42,
+            'homepage', fetch( content, node, hash( node_id, 2 ) )
+        )
     )
 )}
 ```
