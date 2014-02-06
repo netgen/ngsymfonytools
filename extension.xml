@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>Netgen Symfony Tools</name>
+        <version>1.0</version>
+        <copyright>Copyright (C) 2014 Netgen d.o.o.</copyright>
+        <license>GNU General Public License v2.0</license>
+        <info_url>http://projects.ez.no/ngsymfonytools</info_url>
+    </metadata>
+</software>
