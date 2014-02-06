@@ -17,7 +17,7 @@ Example call:
     'NetgenTestBundle:Test:test.html.twig',
     hash(
         'theAnswer', 42,
-        'homepage', fetch( content, node, hash( node_id, 2 ) )
+        'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
     )
 )}
 ```
@@ -63,7 +63,7 @@ Example call:
     'NetgenTestBundle:Test:test.html.twig',
     hash(
         'theAnswer', 42,
-        'homepage', fetch( content, node, hash( node_id, 2 ) )
+        'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
     ),
     hash(
         'queryParam1', 'netgen',
@@ -84,7 +84,7 @@ Example calls:
         'NetgenTestBundle:Test:test.html.twig',
         hash(
             'theAnswer', 42,
-            'homepage', fetch( content, node, hash( node_id, 2 ) )
+            'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
         )
     )
 )}
@@ -114,7 +114,7 @@ Example calls:
 
 `symfony_render_esi` template operator can be used instead of `symfony_render` operator, because underlying `render_esi` Twig template function falls back to `render` behavior if reverse proxy is not detected by Symfony.
 
-Example calls:
+ESI example call:
 
 ```smarty
 {symfony_render_esi(
@@ -122,11 +122,13 @@ Example calls:
         'NetgenTestBundle:Test:test.html.twig',
         hash(
             'theAnswer', 42,
-            'homepage', fetch( content, node, hash( node_id, 2 ) )
+            'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
         )
     )
 )}
 ```
+
+Hinclude example call:
 
 ```smarty
 {symfony_render_hinclude(
@@ -134,7 +136,7 @@ Example calls:
         'NetgenTestBundle:Test:test.html.twig',
         hash(
             'theAnswer', 42,
-            'homepage', fetch( content, node, hash( node_id, 2 ) )
+            'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
         )
     )
 )}

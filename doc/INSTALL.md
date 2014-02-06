@@ -15,13 +15,17 @@ Unpack the downloaded package into the `ezpublish_legacy/extension` directory of
 Activate the extension by using the admin interface ( Setup -> Extensions ) or by
 prepending `ngsymfonytools` to `ActiveExtensions[]` in `ezpublish_legacy/settings/override/site.ini.append.php`:
 
-    [ExtensionSettings]
-    ActiveExtensions[]=ngsymfonytools
+```ini
+[ExtensionSettings]
+ActiveExtensions[]=ngsymfonytools
+```
 
 ### Regenerate autoload array
 
 Run the following from `ezpublish_legacy` folder
 
-    php bin/php/ezpgenerateautoloads.php --extension
+```bash
+$ php bin/php/ezpgenerateautoloads.php --extension
+```
 
 Or go to Setup -> Extensions and click the "Regenerate autoload arrays" button
