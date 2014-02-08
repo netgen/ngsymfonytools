@@ -24,7 +24,7 @@ Example call:
 
 ### `symfony_path`
 
-`symfony_path` template operator get a relative URL for the given route. Parameters are the same as with Twig `path` template function so please refer to [this page][1] for documentation.
+`symfony_path` template operator gets a relative URL for the given route. Parameters are the same as with Twig `path` template function so please refer to [this page][1] for documentation.
 
 This template operator can be used together with `symfony_render` template operator (see below) to refer to the route that you want to render.
 
@@ -39,7 +39,7 @@ Example call:
 
 ### `symfony_url`
 
-`symfony_url` template operator get an absolute URL for the given route. Parameters are the same as with Twig `url` template function so please refer to [this page][1] for documentation.
+`symfony_url` template operator gets an absolute URL for the given route. Parameters are the same as with Twig `url` template function so please refer to [this page][1] for documentation.
 
 This template operator can be used together with `symfony_render` template operator (see below) to refer to the route that you want to render.
 
