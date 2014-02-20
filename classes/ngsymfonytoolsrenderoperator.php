@@ -127,6 +127,13 @@ class NgSymfonyToolsRenderOperator
         $strategy = isset( $options['strategy'] ) ? $options['strategy'] : 'inline';
         unset( $options['strategy'] );
 
-        return $fragmentHandler->render( $uri, $strategy, $options );
+        try
+        {
+            return $fragmentHandler->render( $uri, $strategy, $options );
+        }
+        catch ( InvalidArgumentException $e )
+        {
+            throw new InvalidArgumentException( "The URI {$uri->controller} couldn't be rendered", 0, $e );
+        }
     }
 }
