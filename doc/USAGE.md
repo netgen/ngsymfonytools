@@ -62,7 +62,7 @@ Example call:
 
 ```smarty
 {symfony_controller(
-    'NetgenTestBundle:Test:test.html.twig',
+    'NetgenTestBundle:Test:test',
     hash(
         'theAnswer', 42,
         'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
@@ -83,7 +83,7 @@ Example calls:
 ```smarty
 {symfony_render(
     symfony_controller(
-        'NetgenTestBundle:Test:test.html.twig',
+        'NetgenTestBundle:Test:test',
         hash(
             'theAnswer', 42,
             'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
@@ -121,7 +121,7 @@ ESI example call:
 ```smarty
 {symfony_render_esi(
     symfony_controller(
-        'NetgenTestBundle:Test:test.html.twig',
+        'NetgenTestBundle:Test:test',
         hash(
             'theAnswer', 42,
             'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
@@ -135,7 +135,7 @@ Hinclude example call:
 ```smarty
 {symfony_render_hinclude(
     symfony_controller(
-        'NetgenTestBundle:Test:test.html.twig',
+        'NetgenTestBundle:Test:test',
         hash(
             'theAnswer', 42,
             'homepage', fetch( 'content', 'node', hash( 'node_id', 2 ) )
