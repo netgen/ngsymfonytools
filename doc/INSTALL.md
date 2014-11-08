@@ -6,9 +6,13 @@
 
 ## Installation
 
-### Unpack/unzip
+### Install through Composer
 
-Unpack the downloaded package into the `ezpublish_legacy/extension` directory of your eZ Publish installation.
+eZ Publish already comes bundled with the extension, so you can ofcourse skip this step if your
+installation already has the extension. Otherwise, you can install the extension with the
+following command:
+
+    php composer.phar require netgen/ngsymfonytools:~1.1
 
 ### Activate extension
 
@@ -20,12 +24,10 @@ prepending `ngsymfonytools` to `ActiveExtensions[]` in `ezpublish_legacy/setting
 ActiveExtensions[]=ngsymfonytools
 ```
 
-### Regenerate autoload array
+### Regenerate the legacy autoload array
 
-Run the following from `ezpublish_legacy` folder
+Run the following from your installation root folder
 
-```bash
-$ php bin/php/ezpgenerateautoloads.php --extension
-```
+    php ezpublish/console ezpublish:legacy:script bin/php/ezpgenerateautoloads.php
 
-Or go to Setup -> Extensions and click the "Regenerate autoload arrays" button
+Or go to Setup -> Extensions in admin interface and click the "Regenerate autoload arrays" button
