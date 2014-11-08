@@ -81,7 +81,7 @@ class NgSymfonyToolsPathUrlOperator
      */
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters, $placement )
     {
-        if ( !is_string( $namedParameters['name'] ) && empty( $namedParameters['name'] ) )
+        if ( !is_string( $namedParameters['name'] ) || empty( $namedParameters['name'] ) )
         {
             $tpl->error( $operatorName, "$operatorName parameter 'name' must be a non empty string.", $placement );
             return;

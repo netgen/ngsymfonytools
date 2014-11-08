@@ -65,7 +65,7 @@ class NgSymfonyToolsControllerOperator
      */
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters, $placement )
     {
-        if ( !is_string( $namedParameters['controller'] ) && empty( $namedParameters['controller'] ) )
+        if ( !is_string( $namedParameters['controller'] ) || empty( $namedParameters['controller'] ) )
         {
             $tpl->error( $operatorName, "$operatorName parameter 'controller' must be a non empty string.", $placement );
             return;
