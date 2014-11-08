@@ -9,7 +9,6 @@
             "email": "info@netgen.hr"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "ezsystems/ezpublish-legacy-installer": "*"
     },
