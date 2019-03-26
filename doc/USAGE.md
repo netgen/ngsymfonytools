@@ -144,4 +144,14 @@ Hinclude example call:
 )}
 ```
 
+### `symfony_is_granted`
+
+`symfony_is_granted` template operator enables you to use Symfony's `is_granted` Twig function from your legacy template.
+
+Example call:
+
+```smarty
+{set $is_admin = symfony_is_granted( 'ROLE_ADMIN' )}
+```
+
 [1]: http://symfony.com/doc/current/reference/twig_reference.html
