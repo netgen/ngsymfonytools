@@ -14,5 +14,9 @@
     },
     "extra": {
         "ezpublish-legacy-extension-name": "ngsymfonytools"
+    },
+    "conflict": {
+        "ezsystems/ezpublish-kernel": "*",
+        "ezsystems/ezplatform-kernel": "*"
     }
 }

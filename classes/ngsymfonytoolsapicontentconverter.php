@@ -1,6 +1,6 @@
 <?php
 
-use \eZ\Publish\API\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Repository;
 
 class NgSymfonyToolsApiContentConverter
 {
@@ -10,7 +10,7 @@ class NgSymfonyToolsApiContentConverter
     private static $instance;
 
     /**
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     private $repository;
 
@@ -24,7 +24,7 @@ class NgSymfonyToolsApiContentConverter
         if ( self::$instance === null )
         {
             $serviceContainer = ezpKernel::instance()->getServiceContainer();
-            self::$instance = new self( $serviceContainer->get( 'ezpublish.api.repository' ) );
+            self::$instance = new self( $serviceContainer->get( 'ibexa.api.repository' ) );
         }
 
         return self::$instance;
