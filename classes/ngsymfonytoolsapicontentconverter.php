@@ -35,7 +35,7 @@ class NgSymfonyToolsApiContentConverter
      *
      * @private
      *
-     * @param \eZ\Publish\API\Repository\Repository $repository
+     * @param \Ibexa\Contracts\Core\Repository\Repository $repository
      */
     private function __construct( Repository $repository )
     {

@@ -8,7 +8,7 @@
 
 You need to specify the template name and list of parameters that will be transferred to the included template.
 
-If any of your parameters are instances of `eZContentObject` or `eZContentObjectTreeNode`, they will be converted to instances of `\eZ\Publish\API\Repository\Values\Content\Content` and `\eZ\Publish\API\Repository\Values\Content\Location` respectivelly, before being passed to the included template.
+If any of your parameters are instances of `eZContentObject` or `eZContentObjectTreeNode`, they will be converted to instances of `\Ibexa\Contracts\Core\Repository\Values\Content\Content` and `\Ibexa\Contracts\Core\Repository\Values\Content\Location` respectivelly, before being passed to the included template.
 
 Example call:
 
@@ -56,7 +56,7 @@ Example call:
 
 `symfony_controller` template operator is not useful by itself. It is used together with `symfony_render` template operator (see below) to refer to the controller that you want to render. Parameters are the same as with Twig `controller` template function so please refer to [this page][1] for documentation.
 
-If any of your parameters are instances of `eZContentObject` or `eZContentObjectTreeNode`, they will be converted to instances of `\eZ\Publish\API\Repository\Values\Content\Content` and `\eZ\Publish\API\Repository\Values\Content\Location` respectivelly, before being passed to the controller.
+If any of your parameters are instances of `eZContentObject` or `eZContentObjectTreeNode`, they will be converted to instances of `\Ibexa\Contracts\Core\Repository\Values\Content\Content` and `\Ibexa\Contracts\Core\Repository\Values\Content\Location` respectivelly, before being passed to the controller.
 
 Example call:
 
